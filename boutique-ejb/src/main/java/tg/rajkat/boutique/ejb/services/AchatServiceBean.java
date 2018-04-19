@@ -15,18 +15,18 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import tg.rajkat.boutique.api.entities.Achat;
 import tg.rajkat.boutique.api.services.AchatServiceBeanRemote;
+import tg.rajkat.boutique.ejb.util.Constant;
 
 /**
  *
- * @author Leonce
+ * @author rajkat
  */
 @Stateless
 public class AchatServiceBean implements AchatServiceBeanRemote {
 
-    private static final String DEFAULT_PU = "bout2PU";
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(DEFAULT_PU);
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(Constant.DEFAULT_PU);
     
-    @PersistenceContext(name = DEFAULT_PU)
+//    @PersistenceContext(name = Constant.DEFAULT_PU)
     private EntityManager em = emf.createEntityManager();
     
     private EntityTransaction et = em.getTransaction();

@@ -14,16 +14,16 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import tg.rajkat.boutique.api.entities.Produit;
 import tg.rajkat.boutique.api.services.ProduitServiceBeanRemote;
+import tg.rajkat.boutique.ejb.util.Constant;
 
 /**
  *
- * @author Leonce
+ * @author rajkat
  */
 @Stateless
 public class ProduitServiceBean implements ProduitServiceBeanRemote {
 
-    private static final String DEFAULT_PU = "boutique2PU";
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(DEFAULT_PU);
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory(Constant.DEFAULT_PU);
     
 //    @PersistenceContext(name = DEFAULT_PU)
     private EntityManager em = emf.createEntityManager();
